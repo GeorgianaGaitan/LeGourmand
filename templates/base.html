@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Styles -->
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css' %}"
+    />
+
+    <!-- Configure title and favicon -->
+    <link rel="icon" sizes="any" type="image/svg+xml" href="{% static 'img/le-gourmand__small.svg' %}">
+    <title>Le Gourmand</title>
+  </head>
+  <body>
+    <div class="header">
+      <a height="40" href="{% url 'home' %}">
+        <img
+          class="logo"
+          src="{% static 'img/le-gourmand.svg' %}"
+          alt="LeGourmand Logo"
+          height="40"
+        />
+      </a>
+      <div class="header-links">
+      {% if user.is_authenticated %}
+        <a class="btn btn-primary" href="/recipe/add">New Recipe</a>
+        <div>
+          Hello, <span class="username">{{ user.username }}</span> |
+          <form method="post" action="{% url 'logout' %}" style="display: inline">
+            {% csrf_token %}
+            <button type="submit" class="btn">Logout</button>
+          </form>
+        </div>
+      {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="content">{% block content %} {% endblock %}</div>
+  </body>
+</html>

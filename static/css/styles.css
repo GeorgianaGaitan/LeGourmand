@@ -1,0 +1,245 @@
+/* color scheme variables */
+:root {
+  --color-bg: #fff3e0;
+  --color-card-bg: #fdfaf6;
+  --color-accent: #f57c00;
+  --color-accent-hover: #e65100;
+  --color-text: #333333;
+  --color-input-bg: #f0f0f0;
+  --color-error-bg: #ffece6;
+  --color-error-text: #d84315;
+}
+
+/* general styling */
+body {
+  background-color: var(--color-bg);
+  font-family: "Segoe UI", sans-serif;
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  padding: 20px;
+}
+
+.btn-primary {
+  border: 2px solid var(--color-accent) !important;
+  border-radius: 4px;
+  padding: 4px 5px;
+  text-decoration: none !important;
+}
+.btn-primary:hover {
+  color: white;
+  background-color: var(--color-accent);
+}
+
+.btn {
+  background: none;
+  font-weight: bold;
+  font-size: medium;
+  border: none;
+  color: var(--color-accent);
+  cursor: pointer;
+}
+
+.btn:hover {
+  text-decoration: underline;
+}
+
+/* header styling */
+.header {
+  background-color: var(--color-card-bg);
+  padding: 10px;
+  text-align: right;
+  min-height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header a {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.header-links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo {
+  vertical-align: middle;
+}
+
+.username {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* card general styles */
+.card {
+  background-color: var(--color-card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  margin: 5px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: var(--color-text);
+}
+
+.card h2 {
+  color: var(--color-accent);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* card input fields styling */
+.card input[type="text"],
+.card textarea,
+.card input[type="number"],
+.card input[type="password"] {
+  width: 95%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--color-input-bg);
+  color: var(--color-text);
+}
+
+/* card buttons styling */
+.card input[type="submit"],
+.card button {
+  width: 100%;
+  background-color: var(--color-accent);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.card input[type="submit"]:hover,
+.card button:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* errors styling */
+.errorlist {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+  background-color: var(--color-error-bg);
+  border-left: 4px solid var(--color-error-text);
+  color: var(--color-error-text);
+  font-size: 0.9rem;
+  border-radius: 6px;
+}
+
+.errorlist li {
+  padding: 8px 12px;
+}
+
+
+
+/* Card list */
+
+.recipe-list {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.recipe-card {
+  background-color: var(--color-card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-4px);
+}
+
+.recipe-card h3 {
+  margin-top: 0;
+  color: var(--color-accent);
+}
+
+
+.order-options {
+  margin-bottom: 20px;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.order-options a {
+  margin-left: 5px;
+  margin-right: 5px;
+  text-decoration: none;
+  color: var(--color-accent);
+}
+
+.order-options a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.recipe-detail-header{
+  display: flex;
+  flex-direction: row;
+
+  gap: 10px;
+}
+
+.btn-edit {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-right: 10px;
+}
+
+.btn-edit:hover {
+  background-color: #0056b3;
+}

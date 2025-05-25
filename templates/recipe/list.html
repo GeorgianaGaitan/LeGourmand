@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %}
+<div class="recipe-list">
+    <div class="order-options">
+        <span>Order by:</span>
+        <a href="?orderBy=-created_at" class="{% if order_by == '-created_at' %}active{% endif %}">Newest</a>|
+        <a href="?orderBy=created_at" class="{% if order_by == 'created_at' %}active{% endif %}">Oldest</a> |
+        <a href="?orderBy=title" class="{% if order_by == 'title' %}active{% endif %}">Title</a>    |
+        <a href="?orderBy=-title" class="{% if order_by == '-title' %}active{% endif %}">Title Reverse</a>
+    </div>  
+  <h2>All Recipes</h2>
+
+  {% if recipes %}
+  <div class="recipes-grid">
+    {% for recipe in recipes %}
+    <div class="recipe-card">
+      <a href="{% url 'recipe_detail' recipe.pk %}">
+        <h3>{{ recipe.title }}</h3>
+      </a>
+      <p><strong>Duration:</strong> {{ recipe.prep_time }} minutes</p>
+      <p>{{ recipe.description|truncatewords:10 }}...</p>
+      <small>Created at: {{ recipe.created_at|date:"Y-m-d" }}</small>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>No recipes yet!</p>
+  {% endif %}
+</div>
+{% endblock %}

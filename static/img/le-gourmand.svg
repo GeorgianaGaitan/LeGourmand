@@ -1,0 +1,11 @@
+<svg width="220" height="60" viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <rect width="220" height="60" />
+  <text x="50" y="38" font-family="Segoe UI, sans-serif" font-size="28" fill="#F07900">LeGourmand</text>
+
+  <g transform="translate(10,10)" fill="#F07900">
+    <rect x="12" y="0" width="4" height="18" rx="1"/>
+    <rect x="18" y="0" width="4" height="18" rx="1"/>
+    <rect x="24" y="0" width="4" height="18" rx="1"/>
+    <rect x="18" y="18" width="4" height="20" rx="1"/>
+  </g>
+</svg>

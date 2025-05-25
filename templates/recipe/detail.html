@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="recipe-detail">
+  <div class="recipe-detail-header">
+    <h2>{{ recipe.title }}</h2>
+    <!-- display delete and edit button if logged in -->
+    {% if user.is_authenticated %}
+    <form action="{% url 'recipe_update' recipe.pk %}" method="get" style="margin-top: 20px;">
+      {% csrf_token %}
+      <button type="submit" class="btn-edit">Edit Recipe</button>
+    </form>
+      <form action="{% url 'recipe_delete' recipe.pk %}" method="post" style="margin-top: 20px;">
+        {% csrf_token %}
+        <button type="submit" class="btn-danger">Delete Recipe</button>
+      </form>
+    {% endif %}
+  </div> 
+  
+  <p><strong>Description:</strong></p>
+  <p>{{ recipe.description |linebreaksbr }}</p>
+
+  <p><strong>Duration:</strong> {{ recipe.prep_time }} minutes</p>
+
+  <small>Created at: {{ recipe.created_at|date:"Y-m-d" }}</small>
+
+  <div style="margin-top: 20px;">
+    <a href="{% url 'home' %}" class="btn">← Back</a>
+  </div>
+</div>
+{% endblock %}
