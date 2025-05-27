@@ -43,3 +43,4 @@ def recipe_update(request, pk):
         form = RecipeForm(instance=recipe)
 
     return render(request, 'recipe/edit.html', {'form': form, 'recipe': recipe, 'edit_mode': True})
+
